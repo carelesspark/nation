@@ -4,37 +4,35 @@ public class HashMapNation {
 	public static void main(String[] args) {
 		HashMap<String, Integer> nations = new HashMap<String, Integer>();
 		Scanner scanner = new Scanner(System.in);
-		
-		System.out.println("ë‚˜ë¼ ì´ë¦„ê³¼ ì¸êµ¬ë¥¼ 10ê°œ ìž…ë ¥í•˜ì„¸ìš”.(ì˜ˆ: Korea 5000)");
-		while(true) { // "ê·¸ë§Œ"ì´ ìž…ë ¥ë  ë•Œê¹Œì§€ ë°˜ë³µ
-			System.out.print("ë‚˜ë¼ ì´ë¦„, ì¸êµ¬ >> ");		
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-		}
-		
-		while(true) {
-			System.out.print("ì¸êµ¬ ê²€ìƒ‰ >> ");
-			String country = scanner.nextLine();	//ë‚˜ë¼ë¥¼ ìž…ë ¥ ë°›ìŒ
-			if(country.equals("ê·¸ë§Œ"))
+
+		System.out.println("³ª¶ó ÀÌ¸§°ú ÀÎ±¸¸¦ 10°³ ÀÔ·ÂÇÏ¼¼¿ä.(¿¹: Korea 5000)");
+		while (true) { // "±×¸¸"ÀÌ ÀÔ·ÂµÉ ¶§±îÁö ¹Ýº¹
+			System.out.print("³ª¶ó ÀÌ¸§, ÀÎ±¸ >> ");
+			String name = scanner.next();
+
+			if (name.equals("±×¸¸")) {
 				break;
-			Integer population = nations.get(country);	//keyì— ëŒ€í•œ valueê°’ ë°›ìŒ
-			if(population != null) {	//ìž…ë ¥ë°›ì€ ë‚˜ë¼ê°€ ì¡´ìž¬í•  ì‹œ
-				System.out.println(country + "ì˜ ì¸êµ¬ëŠ” " + population);
-			}else {	//ìž…ë ¥ë°›ì€ ë‚˜ë¼ê°€ ì¡´ìž¬í•˜ì§€ ì•Šì„ ì‹œ
-				System.out.println(country + " ë‚˜ë¼ëŠ” ì—†ìŠµë‹ˆë‹¤.");
+			}
+
+			int size = scanner.nextInt();
+			Integer changeSize = Integer.valueOf(size);
+
+			nations.put(name, changeSize);
+		}
+
+		while (true) {
+			System.out.print("ÀÎ±¸ °Ë»ö >> ");
+			String country = scanner.next(); // ³ª¶ó¸¦ ÀÔ·Â ¹ÞÀ½
+			if (country.equals("±×¸¸"))
+				break;
+			Integer population = nations.get(country); // key¿¡ ´ëÇÑ value°ª ¹ÞÀ½
+			if (population != null) { // ÀÔ·Â¹ÞÀº ³ª¶ó°¡ Á¸ÀçÇÒ ½Ã
+				System.out.println(country + "ÀÇ ÀÎ±¸´Â " + population);
+			} else { // ÀÔ·Â¹ÞÀº ³ª¶ó°¡ Á¸ÀçÇÏÁö ¾ÊÀ» ½Ã
+				System.out.println(country + " ³ª¶ó´Â ¾ø½À´Ï´Ù.");
 			}
 		}
-		
+
 		scanner.close();
 	}
 
